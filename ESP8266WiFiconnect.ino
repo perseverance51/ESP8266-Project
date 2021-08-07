@@ -29,7 +29,7 @@ void hardware(){
   delay(10);
   Serial.printf("\n ESP.getFreeSketchSpace =  %u bytes\n\n",ESP.getFreeSketchSpace());//ESP.getFreeSketchSpace =  1781760 bytes
   delay(10);
-  Serial.printf("\n ESP.getSketchMD5 =  %s \n\n",ESP.getSketchMD5().c_str());//ESP.getSketchMD5 =  f578cc35ea3ba1d4de0493873978e83b
+  Serial.printf("\n ESP.getSketchMD5 =  %s \n",ESP.getSketchMD5().c_str());//ESP.getSketchMD5 =  f578cc35ea3ba1d4de0493873978e83b
 
     FlashMode_t ideMode = ESP.getFlashChipMode();
   Serial.printf("Flash ide mode:  %s\n", (ideMode == FM_QIO ? "QIO" : ideMode == FM_QOUT ? "QOUT" : ideMode == FM_DIO ? "DIO" : ideMode == FM_DOUT ? "DOUT" : "UNKNOWN"));
