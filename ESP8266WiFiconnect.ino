@@ -1,14 +1,15 @@
 #include <ESP8266WiFi.h>
-
+const char*ssid="CMCC-DyVv";
+const chat*password="pba5ayzk";
 void setup()
 {
   Serial.begin(115200);
   Serial.println();
-  WiFi.begin("CMCC-DyVv", "pba5ayzk");
+  WiFi.begin(ssid, password);
   Serial.print("Connecting...");
   while (WiFi.status() != WL_CONNECTED)
   {
-    delay(1000);
+    delay(800);
     Serial.print("\n WiFi not connect.");
   }
   Serial.println();
