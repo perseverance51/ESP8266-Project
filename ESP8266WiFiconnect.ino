@@ -1,10 +1,13 @@
 #include <ESP8266WiFi.h>
 const char*ssid="CMCC-DyVv";
-const chat*password="pba5ayzk";
+const char*password="pba5ayzk";
 void setup()
 {
   Serial.begin(115200);
   Serial.println();
+//  WiFi.macAddress(MAC_array_STA);
+//  WiFi.softAPmacAddress(MAC_array_AP);
+  
   WiFi.begin(ssid, password);
   Serial.print("Connecting...");
   while (WiFi.status() != WL_CONNECTED)
@@ -37,9 +40,9 @@ void hardware(){
   //Flash ide mode:  DIO
   
   delay(10);
-Serial.printf("\n ESP.getFlashChipId =  %u \n\n",ESP.getFlashChipId());//ESP.getFlashChipId =  1523951
+Serial.printf("\n ESP.getFlashChipId =  %u \n",ESP.getFlashChipId());//ESP.getFlashChipId =  1523951
   delay(10);
-  Serial.printf("\n ESP.getFlashChipSize =  %u \n\n",ESP.getFlashChipSize());//ESP.getFlashChipSize =  8388608
+  Serial.printf("\n ESP.getFlashChipSize =  %u \n",ESP.getFlashChipSize());//ESP.getFlashChipSize =  8388608
   delay(10);
   Serial.printf("\n ESP.getFlashChipRealSize =  %u \n",ESP.getFlashChipRealSize());//ESP.getFlashChipRealSize =  8388608
   delay(10);
@@ -54,4 +57,14 @@ Serial.printf("\n ESP.getFlashChipId =  %u \n\n",ESP.getFlashChipId());//ESP.get
   Serial.printf("\n getFreeHeap =  %u \n",ESP.getFreeHeap());//getFreeHeap =  50488
       delay(10);
   Serial.printf("\n getMaxFreeBlockSize =  %u \n",ESP.getMaxFreeBlockSize());//getMaxFreeBlockSize =  50096
+ // Serial.println(WiFi.macAddress().c_str());
+   Serial.printf("macAddress = %s",WiFi.macAddress());
+   IPAddress myIP = WiFi.localIP(),wayIP=WiFi.gatewayIP(),netMask=WiFi.subnetMask();
+  Serial.print("AP IP address: ");
+  Serial.println(myIP);
+  Serial.print("STA IP wayIP: ");
+  Serial.println(wayIP);
+    Serial.print("netMask: ");
+  Serial.println(netMask);
+  
 }
