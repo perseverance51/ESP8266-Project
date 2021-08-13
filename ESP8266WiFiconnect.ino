@@ -1,6 +1,8 @@
 #include <ESP8266WiFi.h>
 const char*ssid="CMCC-DyVv";
 const char*password="pba5ayzk";
+float num =0;
+
 void setup()
 {
   Serial.begin(115200);
@@ -66,5 +68,7 @@ Serial.printf("\n ESP.getFlashChipId =  %u \n",ESP.getFlashChipId());//ESP.getFl
   Serial.println(wayIP);
     Serial.print("netMask: ");
   Serial.println(netMask);
-  
+ 
+  num +=0.5;
+ Serial.printf(" %f \n",sin(num)); 
 }
